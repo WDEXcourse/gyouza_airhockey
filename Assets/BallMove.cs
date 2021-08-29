@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallMove : MonoBehaviour
 {
     public Rigidbody rb;
+    public Text ScoreText;
+    private int Score = 0;
+    private int Score2 = 0;
 
+    public Text ScoreText2;
     public Vector3 Startposition;
 
 
@@ -22,14 +27,22 @@ public class BallMove : MonoBehaviour
     {
         if (transform.position.x < -20)
         {
-            transform.position = Startposition;
+            
 
         }
+        if (transform.position.x < -13)
+        {
+            Score+=1;
+            ScoreText.text = "score" + Score.ToString();
+            transform.position = Startposition;
+        }
 
-
-
-
-
+        if(transform.position.x > 14)
+        {
+            Score += 1;
+            ScoreText2.text = "score2" + Score.ToString();
+            transform.position = Startposition;
+        }
 
 
 

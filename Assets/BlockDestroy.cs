@@ -24,8 +24,7 @@ public class BlockDestroy : MonoBehaviour
 
         {
 
-            Score++;
-            ScoreText.text = "score" + Score.ToString();
+            
             Destroy(this.gameObject);
 
 
