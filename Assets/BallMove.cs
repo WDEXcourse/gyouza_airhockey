@@ -12,11 +12,13 @@ public class BallMove : MonoBehaviour
 
     public Text ScoreText2;
     public Vector3 Startposition;
-
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb.AddForce(45, 0, 0, ForceMode.Impulse);
 		Startposition = transform.position;
 
@@ -33,16 +35,42 @@ public class BallMove : MonoBehaviour
         if (transform.position.x < -13)
         {
             Score+=1;
-            ScoreText.text = "score" + Score.ToString();
+            ScoreText.text = "1Pscore:" + Score.ToString();
             transform.position = Startposition;
         }
 
         if(transform.position.x > 14)
         {
-            Score += 1;
-            ScoreText2.text = "score2" + Score.ToString();
+            Score2 += 1;
+            ScoreText2.text = "2Pscore:" + Score2.ToString();
             transform.position = Startposition;
+            Debug.Log(Score2);
         }
+         if(Score + Score2 < Score2)
+            {
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Goal")
+        {
+            audioSource.PlayOneShot(sound1);
+        }
+
+
+
 
 
 
@@ -56,7 +84,6 @@ public class BallMove : MonoBehaviour
 
 
     }
-
 
 
 

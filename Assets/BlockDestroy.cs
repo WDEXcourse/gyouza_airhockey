@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BlockDestroy : MonoBehaviour
 {
     public Text ScoreText;
-    private int Score = 0;
+  
     // Start is called before the first frame update
     void Start()
     {
