@@ -7,7 +7,7 @@ MonoImporter:
   - rb: {instanceID: 0}
   - ScoreText: {instanceID: 0}
   - ScoreText2: {instanceID: 0}
-  - sound1: {instanceID: 0}
+  - sound1: {fileID: 8300000, guid: 1a4284570c549467dbf28fe0a8578bc4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

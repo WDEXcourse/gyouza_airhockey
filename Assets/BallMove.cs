@@ -34,22 +34,31 @@ public class BallMove : MonoBehaviour
         }
         if (transform.position.x < -13)
         {
+
             Score+=1;
+            
             ScoreText.text = "1Pscore:" + Score.ToString();
             transform.position = Startposition;
         }
 
         if(transform.position.x > 14)
         {
+            
             Score2 += 1;
+           
             ScoreText2.text = "2Pscore:" + Score2.ToString();
             transform.position = Startposition;
             Debug.Log(Score2);
         }
-         if(Score + Score2 < Score2)
-            {
-
-            }
+         if(Score < Score2)
+         {
+            Score - Score2 > 5
+                  ||
+            Score2 - Score > 5
+         }
+              
+            
+            
 
 
 
