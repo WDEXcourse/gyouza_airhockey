@@ -20,7 +20,7 @@ public class BallMove : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         rb.AddForce(45, 0, 0, ForceMode.Impulse);
-		Startposition = transform.position;
+        Startposition = transform.position;
 
     }
 
@@ -29,47 +29,42 @@ public class BallMove : MonoBehaviour
     {
         if (transform.position.x < -20)
         {
-            
+
 
         }
         if (transform.position.x < -13)
         {
 
-            Score+=1;
-            
+            Score += 1;
+
             ScoreText.text = "1Pscore:" + Score.ToString();
             transform.position = Startposition;
         }
 
-        if(transform.position.x > 14)
+        if (transform.position.x > 14)
         {
-            
+
             Score2 += 1;
-           
+
             ScoreText2.text = "2Pscore:" + Score2.ToString();
             transform.position = Startposition;
             Debug.Log(Score2);
         }
-         if(Score < Score2)
-         {
-            Score - Score2 > 5
-                  ||
-            Score2 - Score > 5
-         }
-              
-            
-            
+        if (Score < Score2)
+        {
+            if (Score - Score2 > 5 || Score2 - Score > 5)
+            {
+                float randompositionz;
+                randompositionz= Random.Range(1,5);
+                transform.position = new Vector3(1, 0, randompositionz);
 
+            }
 
+        }
 
+        
 
-
-
-
-
-
-
-
+        
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -78,30 +73,7 @@ public class BallMove : MonoBehaviour
             audioSource.PlayOneShot(sound1);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
 
 
 
