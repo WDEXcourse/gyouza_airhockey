@@ -50,21 +50,11 @@ public class BallMove : MonoBehaviour
             transform.position = Startposition;
             Debug.Log(Score2);
         }
-        if (Score < Score2)
-        {
-            if (Score - Score2 > 5 || Score2 - Score > 5)
-            {
-                float randompositionz;
-                randompositionz= Random.Range(1,5);
-                transform.position = new Vector3(1, 0, randompositionz);
-
-            }
-
-        }
-
         
 
-        
+
+
+
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -73,8 +63,32 @@ public class BallMove : MonoBehaviour
             audioSource.PlayOneShot(sound1);
         }
 
+        if (Score < Score2)
+        {
+            randomroughball();
+
+
+
+
+        }
     }
 
 
+    void randomroughball()
+    {
+        if (Score - Score2 > 5 || Score2 - Score > 5)
+        {
+            //Z座標をランダムにする為の変数
+            float randompositionz;
+            randompositionz = Random.Range(-8f, -2f);
+            //X座標をランダムにする為の変数
+            float randompositionx;
+            randompositionx = Random.Range(-10.28f, 10.28f);
 
+            transform.position = new Vector3(randompositionx, 0, randompositionz);
+
+
+        }
+
+    }
 }
