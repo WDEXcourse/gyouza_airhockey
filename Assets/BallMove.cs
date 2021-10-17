@@ -60,17 +60,16 @@ public class BallMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Goal")
         {
+           
             audioSource.PlayOneShot(sound1);
         }
 
-        if (Score < Score2)
+        if (other.gameObject.tag != "Player")
         {
             randomroughball();
 
-
-
-
         }
+       
     }
 
 
