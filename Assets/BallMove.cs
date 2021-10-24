@@ -71,7 +71,7 @@ public class BallMove : MonoBehaviour
         }
        
     }
-
+    
 
     void randomroughball()
     {
